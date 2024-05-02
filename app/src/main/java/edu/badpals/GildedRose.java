@@ -3,16 +3,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GildedRose {
-    List<Item> Updateable;
+    private List<Item> Updateable; 
 
-    public GildedRose() {
+    public GildedRose(Item[] items) {
         Updateable = new ArrayList<>();
     }
 
     public void update_item() {
-        for (Item item : Updateable) {
-           update_quality(item);
-           update_sellIn(item);
+        for (Item Updateable : Updateable) {
+            Updateable.update_quality();
+            Updateable.update_sellIn();
         }
     }
+
+    public Item[] getItems() {
+        return Updateable.toArray(new Item[0]);
+    }
+
+     
 }
