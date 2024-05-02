@@ -14,6 +14,16 @@ public class normalItemTest {
     public void testSellInNegative(){
         Item item = new Item("Dexterity Vest",-1,8);
         item.update_sellIn();
-        assertEquals(6,item.getSellIn());
+
+        assertEquals(-2,item.getSellIn());
     }
+    @Test
+    public void testSellInZero(){
+        Item item = new Item("Dexterity Vest",0,8);
+        item.update_sellIn();
+        assertEquals(-1,item.getSellIn()); 
+    }
+    @Test
+    public void 
+    ///hacer test parametrizados///
 }
