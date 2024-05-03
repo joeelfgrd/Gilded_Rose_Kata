@@ -3,10 +3,5 @@ package edu.badpals;
 public class normalItem {
     public String name;   
 
-    public int sellIn{
-        this.sellIn
-    }
-    public int sellIn(){
-      if sellIn
-    };
+   
     }

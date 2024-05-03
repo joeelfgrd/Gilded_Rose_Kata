@@ -1,29 +1,27 @@
 package edu.badpals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class normalItemTest {
-    @Test
-    public void testSellInPositive() {
-        Item item = new Item("Dexterity Vest", 10, 20);
-        item.update_sellIn();
-        assertEquals(9, item.getSellIn());
-    }
-    @Test
-    public void testSellInNegative(){
-        Item item = new Item("Dexterity Vest",-1,8);
-        item.update_sellIn();
+import java.util.stream.Stream;
 
-        assertEquals(-2,item.getSellIn());
-    }
-    @Test
-    public void testSellInZero(){
-        Item item = new Item("Dexterity Vest",0,8);
+public class NormalItemTest {
+
+    @ParameterizedTest
+    @MethodSource("sellInValues")
+    public void testSellIn(int initialSellIn, int expectedSellIn, int quality) {
+        Item item = new Item("Dexterity Vest", initialSellIn, quality);
         item.update_sellIn();
-        assertEquals(-1,item.getSellIn()); 
+        assertEquals(expectedSellIn, item.getSellIn());
     }
-    @Test
-    public void 
-    ///hacer test parametrizados///
+
+    private static Stream<Arguments> sellInValues() {
+        return Stream.of(
+            Arguments.of(10, 8, 20),
+            Arguments.of(-1, -2, 9),
+            Arguments.of(0, -1, 10)
+        );
+    }
 }
