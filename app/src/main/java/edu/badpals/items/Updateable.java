@@ -1,4 +1,4 @@
-package edu.badpals;
+package edu.badpals.items;
 
 public interface Updateable {
     public void update_sellIn();

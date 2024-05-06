@@ -1,4 +1,7 @@
-package edu.badpals;
+package edu.badpals.items;
+
+import edu.badpals.Item;
+
 public class normalItem implements Updateable {
     private final Item item;
     
@@ -16,9 +19,7 @@ public class normalItem implements Updateable {
     }
     public int getQuality() {
         return this.item.quality;
-    }
-   
-    public void update_quality() {
+    } public void update_quality() {
         if (getSellIn() > 0) {
             this.item.quality -=1;
             return;
