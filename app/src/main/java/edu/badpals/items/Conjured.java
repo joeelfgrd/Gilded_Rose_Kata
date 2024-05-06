@@ -26,5 +26,9 @@ public class Conjured implements Updateable {
         } 
         this.item.quality -= 4;
     }
+    @Override
+    public String toString(){
+        return item.toString();
+    }
 }
 

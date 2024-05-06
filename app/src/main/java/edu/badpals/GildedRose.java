@@ -1,24 +1,40 @@
 package edu.badpals;
+import edu.badpals.items.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class GildedRose {
-    private List<Item> Updateable; 
-
-    public GildedRose(Item[] items) {
-        Updateable = new ArrayList<>();
+    
+    private List<Updateable> almacen = new ArrayList<>();
+    public List<Updateable> almacen(){
+        return almacen;
     }
 
+    
+    public void addItem(Updateable item){
+        almacen().add(item);
+    }
     public void update_item() {
-        for (Item Updateable : Updateable) {
-            Updateable.update_quality();
-            Updateable.update_sellIn();
+        for (Updateable updateable : almacen()){
+            updateable.update_quality();
+            updateable.update_sellIn();
         }
+        
     }
 
-    public Item[] getItems() {
-        return Updateable.toArray(new Item[0]);
-    }
+    @Override
+    public String toString(){
+        StringBuilder almacen = new StringBuilder();
+        for (Updateable item : almacen()){
+            almacen.append(item.toString());
+            almacen.append('\n');
+        }
+        return almacen.toString();
 
+
+    
      
+}
 }

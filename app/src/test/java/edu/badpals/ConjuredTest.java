@@ -46,7 +46,6 @@ class ConjuredTest{
         item.update_quality();
         assertEquals(6, item.getQuality());
     }
-
     @Test
     public void testQuality4() {
         Conjured item = new Conjured("Conjured item", 1, 10);

@@ -7,7 +7,7 @@ public class Sulfuras implements Updateable {
     
 
     public Sulfuras(String name, int sellIn, int quality) {
-        this.item =  new Item(name, sellIn, quality);
+        this.item =  new Item(name, sellIn, 80);
     }
 
     public void update_sellIn() {
@@ -20,8 +20,10 @@ public class Sulfuras implements Updateable {
     public int getQuality() {
         return this.item.quality;
     } 
-    public void update_quality() {
-        this.item.quality = 80;
-
+    public void update_quality() {}
+    @Override
+    public String toString(){
+        return item.toString();
     }
+
 }

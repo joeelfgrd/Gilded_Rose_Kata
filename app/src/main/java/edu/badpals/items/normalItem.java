@@ -26,4 +26,8 @@ public class normalItem implements Updateable {
         } 
         this.item.quality -= 2;
     }
+    @Override
+    public String toString(){
+        return item.toString();
+    }
 }

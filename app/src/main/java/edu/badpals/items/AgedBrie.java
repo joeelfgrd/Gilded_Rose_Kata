@@ -31,4 +31,8 @@ public class AgedBrie implements Updateable {
             this.item.quality = 50;
         }
 }
+    @Override
+    public String toString(){
+        return item.toString();
+    }
 }   
