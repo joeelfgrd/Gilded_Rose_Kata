@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args){
         System.out.println("Bienvenido a Olivanders");
         GildedRose almacen = new GildedRose();
-
+        int day = 4;
         List<Updateable> items =List.of( new normalItem("+5 Dexterity Vest",10,20),
                                          new AgedBrie("Aged Brie",2,0),
                                          new normalItem("Elixir of the Mongoose",5,7),
@@ -39,7 +39,12 @@ public class App {
         
         almacen.update_item();
 
-       
+        while (day<31) {
+        System.out.println("\t #### Day" + day + "#### ");
+        System.out.println(almacen.toString());
+        day = day + 1;
+        almacen.update_item();
+        }
         
         
         
