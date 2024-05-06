@@ -45,20 +45,5 @@ public class App {
         day = day + 1;
         almacen.update_item();
         }
-        
-        
-        
-                                        
-
-
-
-
-
-
-
-
-
-
-
     }
 }
