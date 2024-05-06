@@ -3,6 +3,9 @@ package edu.badpals;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import edu.badpals.items.normalItem;
+
 import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
