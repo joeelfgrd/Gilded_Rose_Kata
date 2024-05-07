@@ -2,29 +2,32 @@ package edu.badpals;
 import edu.badpals.items.Conjured;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.stream.Stream;
+
 
 class ConjuredTest{
 
-    @ParameterizedTest
-    @MethodSource("sellInValues")
-    public void testSellIn(int initialSellIn, int expectedSellIn, int quality) {
-        Conjured item = new Conjured("Conjured item", initialSellIn, quality);
-        item.update_sellIn();
-        assertEquals(expectedSellIn, item.getSellIn());
+    @Test
+    public void testSellIn() {
+        int initialSellIn1 = 10;
+        int quality1 = 20;
+        Conjured item1 = new Conjured("Conjured item", initialSellIn1, quality1);
+        item1.update_sellIn();
+        assertEquals(9, item1.getSellIn());
+
+        int initialSellIn2 = -1;
+        int quality2 = 9;
+        Conjured item2 = new Conjured("Conjured item", initialSellIn2, quality2);
+        item2.update_sellIn();
+        assertEquals(-2, item2.getSellIn());
+
+        int initialSellIn3 = 0;
+        int quality3 = 10;
+        Conjured item3 = new Conjured("Conjured item", initialSellIn3, quality3);
+        item3.update_sellIn();
+        assertEquals(-1, item3.getSellIn());
     }
 
-    private static Stream<Arguments> sellInValues() {
-        return Stream.of(
-            Arguments.of(10, 9, 20),
-            Arguments.of(-1, -2, 9),
-            Arguments.of(0, -1, 10)
-        );
-    }
 
     @Test 
     public void testQuality1() {

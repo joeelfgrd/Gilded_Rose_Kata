@@ -1,34 +1,35 @@
 package edu.badpals;
-
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import edu.badpals.items.normalItem;
-
-import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.stream.Stream;
+
 
 public class normalItemTest {
 
-    @ParameterizedTest
-    @MethodSource("sellInValues")
-    public void testSellIn(int initialSellIn, int expectedSellIn, int quality) {
-        normalItem item = new normalItem("Dexterity Vest", initialSellIn, quality);
-        item.update_sellIn();
-        assertEquals(expectedSellIn, item.getSellIn());
-    }
+    @Test
+    public void testSellIn() {
+        int initialSellIn1 = 10;
+        int quality1 = 20;
+        normalItem item1 = new normalItem("Dexterity Vest", initialSellIn1, quality1);
+        item1.update_sellIn();
+        assertEquals(9, item1.getSellIn());
 
-    private static Stream<Arguments> sellInValues() {
-        return Stream.of(
-            Arguments.of(10, 9, 20),
-            Arguments.of(-1, -2, 9),
-            Arguments.of(0, -1, 10)
-        );
-    }
+       
+        int initialSellIn2 = -1;
+        int quality2 = 9;
+        normalItem item2 = new normalItem("Dexterity Vest", initialSellIn2, quality2);
+        item2.update_sellIn();
+        assertEquals(-2, item2.getSellIn());
 
+        
+        int initialSellIn3 = 0;
+        int quality3 = 10;
+        normalItem item3 = new normalItem("Dexterity Vest", initialSellIn3, quality3);
+        item3.update_sellIn();
+        assertEquals(-1, item3.getSellIn());
+    }
+    
     @Test 
     public void testQuality1() {
         normalItem item = new normalItem("Dexterity Vest", 10, 20);
@@ -56,4 +57,5 @@ public class normalItemTest {
         item.update_quality();
         assertEquals(9, item.getQuality());
     }
+    
 }
