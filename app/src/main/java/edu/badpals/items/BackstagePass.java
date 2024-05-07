@@ -24,17 +24,21 @@ public class BackstagePass implements Updateable {
     public void update_quality() {
         if (getSellIn() > 10) {
             this.item.quality += 1;
-            return;}
+            }
         else if(getSellIn() > 5) {
             this.item.quality += 2;
-            return;}
+            }
         else if(getSellIn() >= 0) {
             this.item.quality += 3;
-            return;
-        }
+            }
+        else if(getSellIn() < 0) {
             this.item.quality = 0;
-
         }
+        if (this.item.quality > 50) {
+            this.item.quality = 50;
+        }
+        
+    }
         
     
     @Override
