@@ -27,4 +27,5 @@ class AgedBrieTest {
         brie.update_quality();
         assertEquals(50, brie.getQuality());
     }
+    
 }

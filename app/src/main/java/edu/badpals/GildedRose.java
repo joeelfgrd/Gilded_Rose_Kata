@@ -1,6 +1,5 @@
 package edu.badpals;
 import edu.badpals.items.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +15,7 @@ public class GildedRose {
     public void addItem(Updateable item){
         almacen().add(item);
     }
+    
     public void update_item() {
         for (Updateable updateable : almacen()){
             updateable.update_quality();
