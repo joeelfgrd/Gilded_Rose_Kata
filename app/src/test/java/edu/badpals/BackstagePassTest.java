@@ -26,7 +26,7 @@ class BackstagePassTest {
         pass.update_quality();
         assertEquals(23, pass.getQuality());
 
-        pass = new BackstagePass("Test Pass", 0, 20);
+        pass = new BackstagePass("Test Pass", 1, 20);
         pass.update_quality();
         assertEquals(23, pass.getQuality());
 

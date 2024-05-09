@@ -32,9 +32,5 @@ public class GildedRose {
             almacen.append('\n');
         }
         return almacen.toString();
-
-
-    
-     
 }
 }
